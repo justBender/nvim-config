@@ -1,0 +1,58 @@
+-- lua/config/darcula-overrides.lua
+-- local set = vim.api.nvim_set_hl
+--
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- 	callback = function()
+-- 		-- core
+-- 		set(0, "Normal", { fg = "#A9B7C6", bg = "#2B2B2B" })
+-- 		set(0, "CursorLine", { bg = "#323232" })
+-- 		set(0, "LineNr", { fg = "#606366" })
+-- 		set(0, "Visual", { bg = "#214283" })
+-- 		set(0, "Comment", { fg = "#808080", italic = true })
+-- 		set(0, "String", { fg = "#6A8759" })
+-- 		set(0, "Number", { fg = "#6897BB" })
+-- 		set(0, "Keyword", { fg = "#CC7832", bold = true })
+-- 		set(0, "Constant", { fg = "#9876AA", bold = true })
+-- 		set(0, "Function", { fg = "#FFC66D" })
+-- 		set(0, "Type", { fg = "#6A8759" })
+-- 		set(0, "Identifier", { fg = "#1290c3" })
+-- 		set(0, "Operator", { fg = "#A9B7C6" })
+--
+-- 		-- treesitter
+-- 		set(0, "@comment", { link = "Comment" })
+-- 		set(0, "@string", { link = "String" })
+-- 		set(0, "@number", { link = "Number" })
+-- 		set(0, "@keyword", { link = "Keyword" })
+-- 		set(0, "@function", { fg = "#FFC66D" })
+-- 		set(0, "@function.call", { fg = "#FFC66D" })
+-- 		set(0, "@method", { fg = "#FFC66D" })
+-- 		set(0, "@method.call", { fg = "#FFC66D" })
+-- 		set(0, "@constructor", { fg = "#FFC66D" })
+-- 		set(0, "@type", { fg = "#FFC66D" })
+-- 		set(0, "@type.builtin", { fg = "#FFC66D" })
+-- 		set(0, "@variable.parameter", { fg = "#A9B7C6" })
+-- 		set(0, "@variable.member", { fg = "#1290c3" })
+-- 		set(0, "@property", { fg = "#1290c3" })
+-- 		set(0, "@punctuation.bracket", { fg = "#A9B7C6" })
+-- 		set(0, "@punctuation.delimiter", { fg = "#A9B7C6" })
+--
+-- 		-- rust semantic tokens
+-- 		set(0, "@lsp.type.function.rust", { fg = "#a7ec21" })
+-- 		set(0, "@lsp.type.method.rust", { fg = "#FFC66D" })
+-- 		set(0, "@lsp.type.type.rust", { fg = "#6A8759" })
+-- 		set(0, "@lsp.type.struct.rust", { fg = "#6A8759" })
+-- 		set(0, "@lsp.type.parameter.rust", { fg = "#A9B7C6" })
+-- 		set(0, "@lsp.type.variable.rust", { fg = "#A9B7C6" })
+-- 		set(0, "@lsp.type.property.rust", { fg = "#1290c3" })
+-- 		set(0, "@lsp.type.enumMember.rust", { fg = "#9876AA" })
+--
+-- 		set(0, "@lsp.typemod.function.declaration.rust", { fg = "#a7ec21", italic = true })
+-- 		set(0, "@lsp.typemod.method.declaration.rust", { fg = "#FFC66D" })
+-- 		set(0, "@lsp.typemod.function.definition.rust", { fg = "#a7ec21", italic = true })
+-- 		set(0, "@lsp.typemod.method.definition.rust", { fg = "#FFC66D" })
+-- 		set(0, "@lsp.typemod.function.defaultLibrary.rust", { fg = "#FFC66D" })
+-- 		set(0, "@lsp.typemod.method.defaultLibrary.rust", { fg = "#FFC66D" })
+-- 		set(0, "@lsp.typemod.function.async.rust", { fg = "#FFC66D", italic = true })
+-- 		set(0, "@lsp.typemod.method.async.rust", { fg = "#FFC66D", italic = true })
+-- 	end,
+-- })
