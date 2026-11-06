@@ -11,7 +11,7 @@ local function hl(name, spec)
 	vim.api.nvim_set_hl(0, name, spec)
 end
 
-vim.g.colors_name = "darcula-eclipse-darker"
+vim.g.colors_name = "eclipse-darker"
 
 local c = {
 	bg = "#2B2D30",
@@ -67,6 +67,12 @@ local c = {
 	template_argument = "#b166da",
 	template_parameter = "#bfa4a4",
 	proc_macro = "#a0a0a0",
+
+	html_constant = "#A9B7C6",
+	html_tag = "#A9B7C6",
+	html_tag_attribute = "#1eb540",
+	html_string = "#17c6a3",
+	html_string_special_hmtl_url = "#A5C261",
 }
 
 -- Core UI
@@ -327,3 +333,11 @@ hl("@method.call.rust", { fg = c.method_call, italic = true })
 hl("@trait.member.definition", { fg = c.trait_method_decl })
 hl("@trait.member.definition.rust", { fg = c.trait_method_decl, italic = true })
 hl("@trait.member.call.rust", { fg = c.method_call, italic = true })
+
+-- html
+
+hl("@constant.html", { fg = c.html_constant, italic = true })
+hl("@string.html", { fg = c.html_string })
+hl("@tag.html", { fg = c.html_tag })
+hl("@tag.attribute.html", { fg = c.html_tag_attribute })
+hl("@string.special.html.url", { fg = c.html_string_special_hmtl_url })

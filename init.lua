@@ -1,2 +1,2 @@
+require("config.colors")
 require("config.lazy")
-vim.cmd.colorscheme("eclipse-darker")

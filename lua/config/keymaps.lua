@@ -213,3 +213,6 @@ map("n", "<leader><tab>[", "<cmd>tabprevious<cr>", { desc = "Previous Tab" })
 
 -- lua
 map({"n", "x"}, "<localleader>r", function() Snacks.debug.run() end, { desc = "Run Lua", ft = "lua" })
+-- In init.lua
+map('i', '<C-y>', '<C-n>', { noremap = true })
+map('i', '<C-e>', '<C-e>', { noremap = true })

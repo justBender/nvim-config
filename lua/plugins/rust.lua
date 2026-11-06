@@ -28,7 +28,9 @@ return {
 									},
 								},
 							},
-							procMacro = { enable = true },
+							procMacro = {
+								enable = false,
+							},
 						},
 					},
 				},

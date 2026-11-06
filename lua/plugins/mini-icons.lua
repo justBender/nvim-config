@@ -1,0 +1,121 @@
+local directories = {
+	".cache",
+	".config",
+	".git",
+	".github",
+	".local",
+	".vim",
+	"AppData",
+	"Applications",
+	"Desktop",
+	"Documents",
+	"Downloads",
+	"Favorites",
+	"Library",
+	"Music",
+	"Network",
+	"Pictures",
+	"ProgramData",
+	"Projects",
+	"Public",
+	"System",
+	"Templates",
+	"Trash",
+	"Volumes",
+	"autoload",
+	"bin",
+	"boot",
+	"build",
+	"colors",
+	"compiler",
+	"dev",
+	"doc",
+	"docs",
+	"etc",
+	"ftdetect",
+	"ftplugin",
+	"home",
+	"indent",
+	"keymap",
+	"lang",
+	"lib",
+	"lsp",
+	"lua",
+	"media",
+	"mini.nvim",
+	"mnt",
+	"node_modules",
+	"nvim",
+	"opt",
+	"pack",
+	"parser",
+	"plugin",
+	"proc",
+	"queries",
+	"root",
+	"rplugin",
+	"sbin",
+	"snippets",
+	"spell",
+	"src",
+	"srv",
+	"syntax",
+	"test",
+	"tests",
+	"tmp",
+	"tutor",
+	"usr",
+	"var",
+}
+
+return {
+	{
+		"nvim-mini/mini.icons",
+		opts = function(_, opts)
+			-- Fallback for directories without predefined icons
+			opts.default = opts.default or {}
+			opts.default.directory = {
+				hl = "DirectoryIcon",
+			}
+			-- Override all predefined directory highlights
+			opts.directory = opts.directory or {}
+			opts.extension = {
+				rs = { hl = "RustIcon" },
+				lua = { hl = "LuaIcon" },
+				js = { hl = "JsIcon" },
+				html = { hl = "HtmlIcon" },
+				css = { hl = "CssIcon" },
+				xml = { hl = "XmlIcon" },
+				toml = { hl = "TomlIcon" },
+				docker = { hl = "DockerIcon" },
+				dockerignore = { hl = "DockerIcon" },
+				svg = { hl = "SvgIcon" },
+				json = { hl = "JsonIcon" },
+				nginx = { hl = "NginxIcon" },
+			}
+			opts.filetype = {
+				["lua"] = { hl = "LuaIcon" },
+				["rust"] = { hl = "RustIcon" },
+				["javascript"] = { hl = "JsIcon" },
+				["html"] = { hl = "HtmlIcon" },
+				["css"] = { hl = "CssIcon" },
+				["toml"] = { hl = "TomlIcon" },
+				["dockerfile"] = { hl = "DockerIcon" },
+				["dockerignore"] = { hl = "DockerIcon" },
+				["xml"] = { hl = "XmlIcon" },
+				["svg"] = { hl = "SvgIcon" },
+				["json"] = { hl = "JsonIcon" },
+				["nginx"] = { hl = "NginxIcon" },
+				["nginx.conf"] = { hl = "NginxIcon" },
+			}
+			opts.file = {
+				["Dockerfile"] = { hl = "DockerIcon" },
+				[".dockerignore"] = { hl = "DockerIcon" },
+			}
+			for _, name in ipairs(directories) do
+				opts.directory[name] =
+					vim.tbl_deep_extend("force", opts.directory[name] or {}, { hl = "DirectoryIcon" })
+			end
+		end,
+	},
+}

@@ -131,20 +131,26 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 -- lua/config/autocmds.lua
 
-vim.api.nvim_create_autocmd("CursorHold", {
-	group = augroup("CursorHold"),
-	callback = function(args)
-		local clients = vim.lsp.get_clients({ bufnr = args.buf })
-
-		if #clients == 0 then
-			return
-		end
-
-		vim.lsp.buf.hover()
-	end,
-})
-
--- lua/config/autocmds.lua
+-- vim.api.nvim_create_autocmd("CursorHold", {
+-- 	group = augroup("CursorHold"),
+-- 	callback = function(args)
+-- 		local clients = vim.lsp.get_clients({ bufnr = args.buf })
+-- 		--
+-- 		if #clients == 0 then
+-- 			return
+-- 		end
+-- 		--
+-- 		vim.lsp.buf.hover({
+-- 			border = "rounded",
+-- 			source = "if_many",
+-- 			header = "",
+-- 			prefix = "",
+-- 			max_width = 80,
+-- 			max_height = 25,
+-- 			focusable = false,
+-- 		})
+-- 	end,
+-- })
 
 vim.opt.updatetime = 500
 
@@ -154,42 +160,45 @@ vim.diagnostic.config({
 	underline = true,
 	severity_sort = true,
 	float = {
-		focus = false,
-		scope = "cursor",
 		border = "rounded",
 		source = "if_many",
 		header = "",
 		prefix = "",
-		max_width = 100,
+		max_width = 80,
 		max_height = 25,
 	},
 })
 
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-	border = "rounded",
-	max_width = 100,
-	max_height = 25,
+vim.api.nvim_create_autocmd("CursorHold", {
+	callback = function(args)
+		local diagnostics = vim.diagnostic.get(args.buf, {
+			lnum = vim.api.nvim_win_get_cursor(0)[1] - 1,
+		})
+
+		if #diagnostics > 0 then
+			vim.diagnostic.open_float(nil, {
+				focus = false,
+				scope = "cursor",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+				max_width = 80,
+				max_height = 25,
+			})
+		end
+	end,
 })
 
-vim.api.nvim_create_autocmd("CursorHold", {
+vim.api.nvim_create_autocmd("CursorHoldI", {
 	callback = function()
-		local diagnostic_win = vim.diagnostic.open_float(nil, {
-			focus = false,
-			scope = "cursor",
+		vim.lsp.buf.hover({
 			border = "rounded",
 			source = "if_many",
 			header = "",
 			prefix = "",
-			max_width = 100,
+			max_width = 80,
 			max_height = 25,
-		})
-
-		if diagnostic_win then
-			return
-		end
-
-		vim.lsp.buf.hover({
-			border = "rounded",
 			focusable = false,
 		})
 	end,
