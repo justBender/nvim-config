@@ -77,6 +77,9 @@ return {
 			opts.default.directory = {
 				hl = "DirectoryIcon",
 			}
+			opts.default.file = {
+				hl = "SnacksPickerPathIgnored",
+			}
 			-- Override all predefined directory highlights
 			opts.directory = opts.directory or {}
 			opts.extension = {
@@ -86,12 +89,19 @@ return {
 				html = { hl = "HtmlIcon" },
 				css = { hl = "CssIcon" },
 				xml = { hl = "XmlIcon" },
+				yaml = { glyph = "", hl = "YamlIcon" },
 				toml = { hl = "TomlIcon" },
 				docker = { hl = "DockerIcon" },
 				dockerignore = { hl = "DockerIcon" },
 				svg = { hl = "SvgIcon" },
 				json = { hl = "JsonIcon" },
 				nginx = { hl = "NginxIcon" },
+				git = { hl = "GitIcon" },
+				png = { hl = "PngIcon" },
+				jpg = { hl = "JpegIcon" },
+				sh = { glyph = "󱆃", hl = "ShellIcon" },
+				bash = { glyph = "", hl = "ShellIcon" },
+				wasm = { glyph = "", hl = "WasmIcon" },
 			}
 			opts.filetype = {
 				["lua"] = { hl = "LuaIcon" },
@@ -105,12 +115,15 @@ return {
 				["xml"] = { hl = "XmlIcon" },
 				["svg"] = { hl = "SvgIcon" },
 				["json"] = { hl = "JsonIcon" },
-				["nginx"] = { hl = "NginxIcon" },
-				["nginx.conf"] = { hl = "NginxIcon" },
+				["env"] = { hl = "EnvIcon" },
 			}
 			opts.file = {
 				["Dockerfile"] = { hl = "DockerIcon" },
+				["Caddyfile"] = { glyph = "Ͼ", hl = "CaddyfileIcon" },
 				[".dockerignore"] = { hl = "DockerIcon" },
+				[".gitignore"] = { hl = "GitIcon" },
+				["nginx.conf"] = { glyph = "", hl = "NginxConfIcon" },
+				["HEAD"] = { hl = "SnacksPickerPathIgnored" },
 			}
 			for _, name in ipairs(directories) do
 				opts.directory[name] =

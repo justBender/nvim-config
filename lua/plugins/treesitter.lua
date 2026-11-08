@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		lazy = false,
 		build = ":TSUpdate",
 		config = require("nvim-treesitter").setup({
 			highlight = { enable = true },
@@ -32,12 +33,11 @@ return {
 				"groovy",
 				"nginx",
 				"pem",
-				"regex",
 				"scheme",
 				"scss",
 				"sql",
-				"tsx",
 				"xml",
+				"tailwindcss",
 			})
 		end,
 	},
