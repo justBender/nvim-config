@@ -12,7 +12,7 @@
   "copilot.lua": { "branch": "master", "commit": "1d674b416df08e5c54e442503b7703a0df462acf" },
   "crates.nvim": { "branch": "main", "commit": "7039bc1d130e424232a7aa64ceddb170a154ff5b" },
   "darcula": { "branch": "master", "commit": "faf8dbab27bee0f27e4f1c3ca7e9695af9b1242b" },
-  "eclipse-darker": { "branch": "main", "commit": "af35f770c78aff6f94c18926f4b69932640a34ff" },
+  "eclipse-darker": { "branch": "main", "commit": "f1695bef3e50dfefd2cfbf655b2e81fd251962f0" },
   "flash.nvim": { "branch": "main", "commit": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a" },
   "friendly-snippets": { "branch": "main", "commit": "b2ea5c41a150ba72fb656eedb4ed0a86d138d945" },
   "fzf-lua": { "branch": "main", "commit": "22f0bbd3140a8a3b34fec75e5a640513ca6d4ce3" },
