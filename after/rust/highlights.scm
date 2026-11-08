@@ -1,8 +1,8 @@
-; Forked from https://github.com/tree-sitter/tree-sitter-rust
-; Copyright (c) 2017 Maxim Sokolov
-; Licensed under the MIT license.
-; Identifier conventions
-; Identifier conventions
+ Forked from https://github.com/tree-sitter/tree-sitter-rust
+ Copyright (c) 2017 Maxim Sokolov
+ Licensed under the MIT license.
+ Identifier conventions
+ Identifier conventions
 (shebang) @keyword.directive
 
 (const_item
@@ -589,3 +589,19 @@
       (raw_string_literal
         (string_content) @string.regexp))))
 
+; test
+
+(macro_invocation
+  macro: (identifier) @macro_name
+  (token_tree) @injection.content
+  (#eq? @macro_name "html")
+  (#set! injection.language "html")
+  (#set! injection.include-children))
+
+(macro_invocation
+  macro: (scoped_identifier
+    name: (identifier) @macro_name)
+  (token_tree) @injection.content
+  (#eq? @macro_name "html")
+  (#set! injection.language "html")
+  (#set! injection.include-children))
