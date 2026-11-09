@@ -11,8 +11,9 @@ local c = {
 	snacks_picker = "#2B2D30",
 	snacks_picker_dir = "#FFFFFF",
 	snacks_picker_file = "#FFFFFF",
-	diagnostic_warn = "#A4A4A4",
-	snacks_picker_git_status_untracked = "#FC8864",
+	diagnostic_warn = "#FCD600",
+	snacks_picker_git_status_untracked = "#FF0000",
+	snacks_picker_git_status_modified = "#FF6A00",
 	docker_icon = "#1D63ED",
 	xml_icon = "#f29c1f",
 	svg_icon = "#ffb300",
@@ -20,7 +21,7 @@ local c = {
 	nginx_conf_icon = "#FFFFFF",
 	git_icon = "#F1502F",
 	yaml_icon = "#cb171e",
-	snacks_picker_path_ignored = "#B9B9B9",
+	snacks_picker_path_ignored = "#8C92AC",
 	png_icon = "#FFFFFF",
 	jpeg_icon = "#FFFFFF",
 	env_icon = "#FFFFFF",
@@ -82,6 +83,10 @@ local function apply()
 		fg = c.diagnostic_warn,
 	})
 
+	vim.api.nvim_set_hl(0, "SnacksPickerGitStatusModified", {
+		fg = c.snacks_picker_git_status_modified,
+	})
+
 	vim.api.nvim_set_hl(0, "SnacksPickerGitStatusUntracked", {
 		fg = c.snacks_picker_git_status_untracked,
 	})
@@ -119,6 +124,14 @@ local function apply()
 	})
 
 	vim.api.nvim_set_hl(0, "SnacksPickerPathIgnored", {
+		fg = c.snacks_picker_path_ignored,
+	})
+
+	vim.api.nvim_set_hl(0, "SnacksPickerPathHidden", {
+		fg = c.snacks_picker_path_ignored,
+	})
+
+	vim.api.nvim_set_hl(0, "SnacksPickerGitStatusIgnored", {
 		fg = c.snacks_picker_path_ignored,
 	})
 

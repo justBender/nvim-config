@@ -78,7 +78,10 @@ return {
 				hl = "DirectoryIcon",
 			}
 			opts.default.file = {
-				hl = "SnacksPickerPathIgnored",
+				hl = "SnacksPickerFile",
+			}
+			opts.filetype = {
+				hl = "SnacksPickerFile",
 			}
 			-- Override all predefined directory highlights
 			opts.directory = opts.directory or {}
@@ -123,8 +126,9 @@ return {
 				[".dockerignore"] = { hl = "DockerIcon" },
 				[".gitignore"] = { hl = "GitIcon" },
 				["nginx.conf"] = { glyph = "", hl = "NginxConfIcon" },
-				["HEAD"] = { hl = "SnacksPickerPathIgnored" },
+				["config"] = { hl = "SnacksPickerFile" },
 			}
+
 			for _, name in ipairs(directories) do
 				opts.directory[name] =
 					vim.tbl_deep_extend("force", opts.directory[name] or {}, { hl = "DirectoryIcon" })
